@@ -1,0 +1,146 @@
+<div class="pt-3 pb-2 mb-3 border-bottom">
+
+  <h2 class="h2">Adicionar skin</h2>
+
+</div>
+
+<!-- HEADER -->
+
+<!-- FORMULÁRIO -->
+
+<form [formGroup]="contatoForm" (ngSubmit)="submitForm()" novalidate>
+
+  <!-- ADAPTA O TAMANHO DO FORMULÁRIO DE ACORDO COM A TELA-->
+
+  <div class="row">
+
+    <div class="col-lg-6 col-md-8 col-sm-12">
+
+      <!--CAMPO NOME -->
+
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label
+
+            [ngClass]="{'text-danger': nome?.touched && nome?.invalid}"
+
+            for="nome" class="form-label">Nome da skin </label>
+          <input
+
+            [ngClass]="{'is-invalid': nome?.touched && nome?.invalid, 'is-valid': nome?.touched && nome?.valid}"
+
+            type="text" id="nome" class="form-control" formControlName="nome" required/>
+
+          <!-- errors-->
+
+          <div class="invalid-feedback"><sup>*</sup>Nome obrigatório</div>
+
+        </div>
+
+      </div>
+
+      <!--  FIM DO CAMPO NOME -->
+
+      <!-- CAMPO raridade -->
+
+      <div class="row">
+
+        <div class="col-md-12 mb-3">
+
+          <label
+
+            [ngClass]="{'text-danger': raridade?.touched && raridade?.invalid}"
+
+            for="raridade" class="form-label">Rarraridade</label>
+
+          <input
+
+            [ngClass]="{'is-invalid': raridade?.touched && raridade?.invalid, 'is-valid': raridade?.touched && raridade?.valid}"
+
+            type="text"
+
+            formControlName="raridade"
+
+            class="form-control"
+
+            required
+
+          />
+
+          <!-- Validation FeedBack -->
+
+          <div class="invalid-feedback"><sup>*</sup>Rarraridade obrigatório</div>
+
+        </div>
+
+      </div>
+
+      <!-- FIM DO CAMPO raridade -->
+
+      <!-- CAMPO TELEFONE -->
+
+      <div class="row">
+
+        <div class="col-md-12 mb-3">
+
+          <label
+
+            [ngClass]="{'text-danger': valor?.touched && valor?.invalid}"
+
+            for="valor" class="form-label">valor:</label>
+
+          <input
+
+            [ngClass]="{'is-invalid': valor?.touched && valor?.invalid, 'is-valid': valor?.touched && valor?.valid}"
+
+            type="number"
+
+            formControlName="valor"
+
+            class="form-control"
+
+            required
+
+          />
+
+          <!-- Validation FeedBack -->
+
+          <div class="invalid-feedback"><sup>*</sup>Informe apenas números</div>
+
+        </div>
+
+      </div>
+
+      <!-- FIM CAMPO TELEFONE -->
+
+      <!-- BOTÕES DO FORMULÁRIO -->
+
+      <div class="form-group text-end">
+
+        <button type="button" class="btn btn-secondary mx-2" (click)="resetForm()">
+
+          Limpar
+
+        </button>
+
+        <button type="submit" class="btn btn-success mx-2" [disabled]="!contatoForm.valid">
+
+          Adicionar skin
+
+        </button>
+
+      </div>
+
+      <!-- FIM DOS BOTÕES DO FORMULÁRIO -->
+
+    </div>
+
+  </div>
+
+ <!-- ADAPTA O TAMANHO DO FORMULÁRIO DE ACORDO COM A TELA-->
+
+</form>
+
+<!-- FORMULÁRIO -->
+
+
